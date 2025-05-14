@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="24B83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Condition" representedClassName="Condition" syncable="YES">
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="hourWeather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HourWeather" inverseName="condition" inverseEntity="HourWeather"/>
+    </entity>
+    <entity name="HourWeather" representedClassName="HourWeather" syncable="YES">
+        <attribute name="temp" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <relationship name="condition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Condition" inverseName="hourWeather" inverseEntity="Condition"/>
+        <relationship name="weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weather" inverseName="hourWeather" inverseEntity="Weather"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="region" optional="YES" attributeType="String"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weather" inverseName="location" inverseEntity="Weather"/>
+    </entity>
+    <entity name="Weather" representedClassName="Weather" syncable="YES">
+        <attribute name="avgTemp" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="maxTemp" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="maxWindSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="minTemp" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="hourWeather" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HourWeather" inverseName="weather" inverseEntity="HourWeather"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="weather" inverseEntity="Location"/>
+    </entity>
+</model>

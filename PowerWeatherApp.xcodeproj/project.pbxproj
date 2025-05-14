@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F25FE442DD3DD67008635F7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1F25FE432DD3DD67008635F7 /* SnapKit */; };
+		1F25FE472DD3DD7F008635F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1F25FE462DD3DD7F008635F7 /* Alamofire */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F25FC912DD39739008635F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F25FC6F2DD39738008635F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F25FC762DD39738008635F7;
+			remoteInfo = PowerWeatherApp;
+		};
+		1F25FC9B2DD39739008635F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F25FC6F2DD39738008635F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F25FC762DD39738008635F7;
+			remoteInfo = PowerWeatherApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F25FC772DD39738008635F7 /* PowerWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F25FC902DD39739008635F7 /* PowerWeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerWeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F25FC9A2DD39739008635F7 /* PowerWeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerWeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1F25FCA22DD39739008635F7 /* Exceptions for "PowerWeatherApp" folder in "PowerWeatherApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Support Files/Info.plist",
+			);
+			target = 1F25FC762DD39738008635F7 /* PowerWeatherApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1F25FC792DD39738008635F7 /* PowerWeatherApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1F25FCA22DD39739008635F7 /* Exceptions for "PowerWeatherApp" folder in "PowerWeatherApp" target */,
+			);
+			path = PowerWeatherApp;
+			sourceTree = "<group>";
+		};
+		1F25FC932DD39739008635F7 /* PowerWeatherAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PowerWeatherAppTests;
+			sourceTree = "<group>";
+		};
+		1F25FC9D2DD39739008635F7 /* PowerWeatherAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PowerWeatherAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F25FC742DD39738008635F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F25FE442DD3DD67008635F7 /* SnapKit in Frameworks */,
+				1F25FE472DD3DD7F008635F7 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F25FC8D2DD39739008635F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F25FC972DD39739008635F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F25FC6E2DD39738008635F7 = {
+			isa = PBXGroup;
+			children = (
+				1F25FC792DD39738008635F7 /* PowerWeatherApp */,
+				1F25FC932DD39739008635F7 /* PowerWeatherAppTests */,
+				1F25FC9D2DD39739008635F7 /* PowerWeatherAppUITests */,
+				1F25FC782DD39738008635F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F25FC782DD39738008635F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F25FC772DD39738008635F7 /* PowerWeatherApp.app */,
+				1F25FC902DD39739008635F7 /* PowerWeatherAppTests.xctest */,
+				1F25FC9A2DD39739008635F7 /* PowerWeatherAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F25FC762DD39738008635F7 /* PowerWeatherApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F25FCA32DD39739008635F7 /* Build configuration list for PBXNativeTarget "PowerWeatherApp" */;
+			buildPhases = (
+				1F25FC732DD39738008635F7 /* Sources */,
+				1F25FC742DD39738008635F7 /* Frameworks */,
+				1F25FC752DD39738008635F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1F25FC792DD39738008635F7 /* PowerWeatherApp */,
+			);
+			name = PowerWeatherApp;
+			packageProductDependencies = (
+				1F25FE432DD3DD67008635F7 /* SnapKit */,
+				1F25FE462DD3DD7F008635F7 /* Alamofire */,
+			);
+			productName = PowerWeatherApp;
+			productReference = 1F25FC772DD39738008635F7 /* PowerWeatherApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F25FC8F2DD39739008635F7 /* PowerWeatherAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F25FCA82DD39739008635F7 /* Build configuration list for PBXNativeTarget "PowerWeatherAppTests" */;
+			buildPhases = (
+				1F25FC8C2DD39739008635F7 /* Sources */,
+				1F25FC8D2DD39739008635F7 /* Frameworks */,
+				1F25FC8E2DD39739008635F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F25FC922DD39739008635F7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1F25FC932DD39739008635F7 /* PowerWeatherAppTests */,
+			);
+			name = PowerWeatherAppTests;
+			packageProductDependencies = (
+			);
+			productName = PowerWeatherAppTests;
+			productReference = 1F25FC902DD39739008635F7 /* PowerWeatherAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1F25FC992DD39739008635F7 /* PowerWeatherAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F25FCAB2DD39739008635F7 /* Build configuration list for PBXNativeTarget "PowerWeatherAppUITests" */;
+			buildPhases = (
+				1F25FC962DD39739008635F7 /* Sources */,
+				1F25FC972DD39739008635F7 /* Frameworks */,
+				1F25FC982DD39739008635F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F25FC9C2DD39739008635F7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1F25FC9D2DD39739008635F7 /* PowerWeatherAppUITests */,
+			);
+			name = PowerWeatherAppUITests;
+			packageProductDependencies = (
+			);
+			productName = PowerWeatherAppUITests;
+			productReference = 1F25FC9A2DD39739008635F7 /* PowerWeatherAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F25FC6F2DD39738008635F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					1F25FC762DD39738008635F7 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					1F25FC8F2DD39739008635F7 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 1F25FC762DD39738008635F7;
+					};
+					1F25FC992DD39739008635F7 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 1F25FC762DD39738008635F7;
+					};
+				};
+			};
+			buildConfigurationList = 1F25FC722DD39738008635F7 /* Build configuration list for PBXProject "PowerWeatherApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F25FC6E2DD39738008635F7;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1F25FE422DD3DD67008635F7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1F25FE452DD3DD7F008635F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1F25FC782DD39738008635F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F25FC762DD39738008635F7 /* PowerWeatherApp */,
+				1F25FC8F2DD39739008635F7 /* PowerWeatherAppTests */,
+				1F25FC992DD39739008635F7 /* PowerWeatherAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F25FC752DD39738008635F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F25FC8E2DD39739008635F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F25FC982DD39739008635F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F25FC732DD39738008635F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F25FC8C2DD39739008635F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F25FC962DD39739008635F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F25FC922DD39739008635F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F25FC762DD39738008635F7 /* PowerWeatherApp */;
+			targetProxy = 1F25FC912DD39739008635F7 /* PBXContainerItemProxy */;
+		};
+		1F25FC9C2DD39739008635F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F25FC762DD39738008635F7 /* PowerWeatherApp */;
+			targetProxy = 1F25FC9B2DD39739008635F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1F25FCA42DD39739008635F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PowerWeatherApp/Support Files/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PowerWeatherApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F25FCA52DD39739008635F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PowerWeatherApp/Support Files/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PowerWeatherApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1F25FCA62DD39739008635F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1F25FCA72DD39739008635F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F25FCA92DD39739008635F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PowerWeatherAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerWeatherApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PowerWeatherApp";
+			};
+			name = Debug;
+		};
+		1F25FCAA2DD39739008635F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PowerWeatherAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerWeatherApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PowerWeatherApp";
+			};
+			name = Release;
+		};
+		1F25FCAC2DD39739008635F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PowerWeatherAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PowerWeatherApp;
+			};
+			name = Debug;
+		};
+		1F25FCAD2DD39739008635F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PowerWeatherAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PowerWeatherApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F25FC722DD39738008635F7 /* Build configuration list for PBXProject "PowerWeatherApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F25FCA62DD39739008635F7 /* Debug */,
+				1F25FCA72DD39739008635F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F25FCA32DD39739008635F7 /* Build configuration list for PBXNativeTarget "PowerWeatherApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F25FCA42DD39739008635F7 /* Debug */,
+				1F25FCA52DD39739008635F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F25FCA82DD39739008635F7 /* Build configuration list for PBXNativeTarget "PowerWeatherAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F25FCA92DD39739008635F7 /* Debug */,
+				1F25FCAA2DD39739008635F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F25FCAB2DD39739008635F7 /* Build configuration list for PBXNativeTarget "PowerWeatherAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F25FCAC2DD39739008635F7 /* Debug */,
+				1F25FCAD2DD39739008635F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F25FE422DD3DD67008635F7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit#:~:text=snapkit.github.io/SnapKit/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		1F25FE452DD3DD7F008635F7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F25FE432DD3DD67008635F7 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F25FE422DD3DD67008635F7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1F25FE462DD3DD7F008635F7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F25FE452DD3DD7F008635F7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1F25FC6F2DD39738008635F7 /* Project object */;
+}
