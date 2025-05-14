@@ -12,22 +12,20 @@ struct LocationMapper {
     static func map(from dto: LocationDTO, for context: NSManagedObjectContext) -> Location {
         let location = Location(context: context)
 
-        location.country = dto.locationData.country
-        location.region = dto.locationData.region
+        location.country = dto.location.country
+        location.region = dto.location.region
 
-        for day in dto.forecast.foreCastDay {
+        for day in dto.forecast.forecastDay {
             let weather = Weather(context: context)
-            day.day.forEach { element in
-                weather.maxTemp = element.maxTemp
-                weather.minTemp = element.minTemp
-                weather.avgTemp = element.avgTemp
-                weather.maxWindSpeed = element.maxWindSpeed
-            }
-
+            weather.maxTemp = day.day.maxTemp
+            weather.minTemp = day.day.minTemp
+            weather.avgTemp = day.day.avgTemp
+            weather.maxWindSpeed = day.day.maxWindSpeed
+            
             day.hour.forEach { element in
                 let hourWeather = HourWeather(context: context)
                 hourWeather.time = element.time
-                hourWeather.temp = element.temp
+                hourWeather.temp = element.tempC
 
                 let condition = Condition(context: context)
                 condition.icon = element.condition.icon

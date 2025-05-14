@@ -18,8 +18,9 @@ final class AppCoordinator: CoordinatorProtocol {
     
     func start() {
         MainBuilder.build(dataManager: dataManager) { vc in
-            vc.view.backgroundColor = .systemBackground
-            self.navigationController.pushViewController(vc, animated: true)
+            vc.coordinator = self
+            vc.view.backgroundColor = .mainBackground
+            self.navigationController.pushViewController(vc, animated: false)
         }
     }
 }

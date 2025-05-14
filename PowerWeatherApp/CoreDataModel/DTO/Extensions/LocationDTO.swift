@@ -14,6 +14,4 @@ extension LocationDTO: CoreDataMapable {
     }
     
     typealias Entity = Location
-    
-    
 }

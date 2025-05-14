@@ -27,14 +27,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
-        
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
 
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
-
 }
 

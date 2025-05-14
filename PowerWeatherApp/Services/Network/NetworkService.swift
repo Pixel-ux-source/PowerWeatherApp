@@ -10,7 +10,7 @@ import Alamofire
 
 final class NetworkService {
     // MARK: – Settings URL
-    private let urlApi = "http://api.weatherapi.com/v1/forecast.json"
+    private let urlApi = "https://api.weatherapi.com/v1/forecast.json"
     private let param: Parameters = [
         "key":"fa8b3df74d4042b9aa7135114252304",
         "q":"MOSKVA",
@@ -18,10 +18,10 @@ final class NetworkService {
     ]
     
     // MARK: – Get
-    func getData(completion: @escaping(Result<LocationDTO, Error>) ->()) {
+    func getData<T: Decodable>(of type: T.Type, completion: @escaping(Result<T, Error>) ->()) {
         AF.request(urlApi, method: .get, parameters: param)
             .validate()
-            .responseDecodable(of: LocationDTO.self, queue: .global()) { response in
+            .responseDecodable(of: T.self, queue: .global()) { response in
                 switch response.result {
                 case .success(let data):
                     DispatchQueue.main.async {

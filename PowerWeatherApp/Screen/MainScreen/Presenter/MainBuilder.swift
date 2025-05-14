@@ -13,14 +13,10 @@ protocol MainBuilderProtocol: AnyObject {
 
 final class MainBuilder: MainBuilderProtocol {
     static func build(dataManager: CoreDataManager, completion: @escaping (MainController) -> ()) {
-        dataManager.loadData(of: Location.self) { model in
-            DispatchQueue.main.async {
-                let view = MainController()
-                let presenter = MainPresenter(view: view, model: model)
-                view.presenter = presenter
-                view.dataManager = dataManager
-                completion(view)
-            }
-        }
+        let view = MainController()
+        let networkService = NetworkService()
+        let presenter = MainPresenter(view: view, dataManager: dataManager, networkService: networkService)
+        view.presenter = presenter
+        completion(view)
     }
 }

@@ -30,16 +30,16 @@ extension Weather {
 // MARK: Generated accessors for hour
 extension Weather {
 
-    @objc(addHourObject:)
+    @objc(addHourWeatherObject:)
     @NSManaged public func addToHourWeather(_ value: HourWeather)
 
-    @objc(removeHourObject:)
+    @objc(removeHourWeatherObject:)
     @NSManaged public func removeFromHourWeather(_ value: HourWeather)
 
-    @objc(addHour:)
+    @objc(addHourWeather:)
     @NSManaged public func addToHourWeather(_ values: NSSet)
 
-    @objc(removeHour:)
+    @objc(removeHourWeather:)
     @NSManaged public func removeFromHourWeather(_ values: NSSet)
 
 }
