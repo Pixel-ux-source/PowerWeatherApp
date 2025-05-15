@@ -19,7 +19,7 @@ final class AppCoordinator: CoordinatorProtocol {
     func start() {
         MainBuilder.build(dataManager: dataManager) { vc in
             vc.coordinator = self
-            vc.view.backgroundColor = .mainBackground
+            vc.view.backgroundColor = .whiteCustom
             self.navigationController.pushViewController(vc, animated: false)
         }
     }

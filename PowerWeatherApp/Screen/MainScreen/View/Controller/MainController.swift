@@ -14,28 +14,48 @@ class MainController: UIViewController {
     var coordinator: AppCoordinator!
     
     // MARK: – Instance's
-    private let tableView = MainTableView()
+    private let collectionView = MainCollection(collectionViewLayout: LayoutProvider.loadLayout())
     private let dataSource = MainDataSource()
-    private let tableDelegate = MainTableDelegate()
-    private let networkService = NetworkService()
     
     // MARK: – Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.loadData()
-        configureTableView()
+        configureCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
     }
     
     // MARK: – Configuration's
-    private func configureTableView() {
-        view.addSubview(tableView)
+    private func configureCollectionView() {
+        view.addSubview(collectionView)
         
-        tableView.snp.makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        tableView.dataSource = dataSource
-        tableView.delegate = tableDelegate
+        collectionView.dataSource = dataSource
+    }
+    
+    private func configureNavigationBar() {
+        navigationItem.title = "Moskva"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let apperance = UINavigationBarAppearance()
+        apperance.configureWithOpaqueBackground()
+        apperance.backgroundColor = .whiteCustom
+        
+        apperance.largeTitleTextAttributes = [
+            .foregroundColor: UIColor.black,
+            .font: UIFont.systemFont(ofSize: 30, weight: .bold)
+        ]
+        
+        navigationItem.standardAppearance = apperance
+        navigationItem.scrollEdgeAppearance = apperance
+        navigationItem.compactAppearance = apperance
     }
     
 }
@@ -43,8 +63,7 @@ class MainController: UIViewController {
 extension MainController: MainViewProtocol {
     func showLocation(_ locations: [Location]) {
         dataSource.model = locations
-        tableView.reloadData()
-        print(dataSource.model)
+        collectionView.reloadData()
     }
     
     func showError(_ message: String) {
