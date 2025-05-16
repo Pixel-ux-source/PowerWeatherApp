@@ -13,20 +13,26 @@ protocol MainViewProtocol: AnyObject {
     func showCityName(_ cityName: String)
     
     func showError(_ message: String)
+    func showLocationDeniedAlert()
+    func showRetryAlert(_ message: String, retryAction: @escaping () -> ())
+    
     func showLoading()
     func hideLoading()
 }
 
 protocol MainPresenterProtocol: AnyObject {
-    func loadData()
+    func loadLocation()
     var dayWeatherModels: [HourWeatherModel] { get }
+    var cityName: String { get }
 }
 
 final class MainPresenter: MainPresenterProtocol {
     private(set) var dayWeatherModels: [HourWeatherModel] = []
     private(set) var weekWeatherModels: [WeekWeatherModel] = []
-    private(set) var cityName: String?
+    private(set) var cityName: String = "Москва"
+    
     private weak var view: MainViewProtocol?
+    
     private let dataManager: CoreDataManager
     private let networkService: NetworkService
     private let locationService: LocationService
@@ -56,44 +62,62 @@ final class MainPresenter: MainPresenterProtocol {
                 }
             case .failure(let error):
                 self.view?.hideLoading()
-                self.view?.showError("Ошибка загрузки")
-                print("Ошибка загрузки \(error.localizedDescription)\nДетально: \(String(describing: error.asAFError))")
+                self.view?.showRetryAlert("Ошибка загрузки данных", retryAction: {
+                    self.view?.showLoading()
+                    self.fetchFromServer(query: query)
+                })
+                print("Ошибка загрузки \(error.localizedDescription)\nДетально: \(String(describing: error.asAFError))\n")
             }
         }
     }
     
-    // Изменить метод на приватный и сделать SRP. locationService в отдельный internal метод?
     // MARK: – Load Data
-    func loadData() {
+    private func loadData(city: String) {
+        self.dataManager.loadData(of: Location.self) { localData in
+            self.view?.showLoading()
+            self.cityName = city
+            if !localData.isEmpty {
+                self.updateModels(with: localData)
+                self.view?.hideLoading()
+            } else {
+                self.fetchFromServer(query: city)
+            }
+        }
+    }
+    
+    // MARK: – Load Location
+    func loadLocation() {
         locationService.requestLocation { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let city):
-                self.view?.showLoading()
-                self.cityName = city
-                self.dataManager.loadData(of: Location.self) { localData in
-                    if !localData.isEmpty {
-                        self.updateModels(with: localData)
-                        self.view?.hideLoading()
-                    } else {
-                        self.fetchFromServer(query: city)
-                    }
-                }
-                view?.hideLoading()
+                loadData(city: city)
             case .failure(let error):
-                self.view?.showError("Ошибка получения геолокации")
+                self.handleLocationError(error)
                 print("Ошибка получения геолокации: \(error.localizedDescription)")
             }
         }
     }
     
+    private func handleLocationError(_ error: Error) {
+        if let locationError = error as? LocationError {
+            switch locationError {
+            case .noLocation, .noPlacemark:
+                view?.showError("Не удалось определить местоположение")
+            case .permissionDenied:
+                view?.showLocationDeniedAlert()
+                loadData(city: cityName)
+            case .unknow:
+                view?.showError("Произошла неизвестная ошибка при определении местоположения")
+            }
+        } else {
+            self.view?.showError("Ошибка геолокации: \(error.localizedDescription)")
+        }
+    }
+    
     // MARK: – Update Model Location
     private func updateModels(with locations: [Location]) {
-        if let cityName {
-            view?.showCityName(cityName)
-        } else {
-            view?.showCityName("Город")
-        }
+        view?.showCityName(cityName)
         
         if let hourWeather = self.extractFirstHourWeather(from: locations) {
             self.dayWeatherModels = hourWeather.map(HourWeatherModel.init)

@@ -9,6 +9,21 @@ import UIKit
 import SnapKit
 
 class MainController: UIViewController {
+    // MARK: – UI Element's
+    private lazy var loader: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView(style: .medium)
+        loader.color = .main
+        loader.hidesWhenStopped = true
+        return loader
+    }()
+    
+    private lazy var loadingBackgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        view.isHidden = true
+        return view
+    }()
+    
     // MARK: – Variables
     var presenter: MainPresenter!
     var coordinator: AppCoordinator!
@@ -20,8 +35,9 @@ class MainController: UIViewController {
     // MARK: – Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.loadData()
+        presenter.loadLocation()
         configureCollectionView()
+        setupLoader()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +72,19 @@ class MainController: UIViewController {
         navigationItem.scrollEdgeAppearance = apperance
         navigationItem.compactAppearance = apperance
     }
+    
+    // MARK: – Setup's
+    private func setupLoader() {
+        view.addSubviews(loader, loadingBackgroundView)
+        
+        loader.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        loadingBackgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
 }
 
 extension MainController: MainViewProtocol {
@@ -74,15 +103,45 @@ extension MainController: MainViewProtocol {
     }
     
     func showError(_ message: String) {
-        // Покажем тут Alert с перезагрузкой
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Закрыть", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+    
+    func showLocationDeniedAlert() {
+        let alert = UIAlertController(title: "Геолокация отключена", message: "Чтобы мы могли показать вам погоду в вашем регионе, пожалуйста, разрешите доступ к геолокации в настройках", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Открыть настройки", style: .default, handler: { _ in
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingsURL)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Закрыть", style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
+    }
+    
+    func showRetryAlert(_ message: String, retryAction: @escaping () -> ()) {
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Повторить", style: .default, handler: { _ in
+            retryAction()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Закрыть", style: .cancel))
+        
+        present(alert, animated: true)
     }
     
     func showLoading() {
-        // Через координатор открыть новый контроллер с загрузкой данных
+        loadingBackgroundView.isHidden = false
+        loader.startAnimating()
+        loader.isUserInteractionEnabled = false
     }
     
     func hideLoading() {
-        // Через координатор закрыть новый контроллер с загрузкой данных
+        loadingBackgroundView.isHidden = true
+        loader.stopAnimating()
+        loader.isUserInteractionEnabled = true
     }
 }
 
