@@ -11,14 +11,15 @@ import Alamofire
 final class NetworkService {
     // MARK: – Settings URL
     private let urlApi = "https://api.weatherapi.com/v1/forecast.json"
-    private let param: Parameters = [
-        "key":"fa8b3df74d4042b9aa7135114252304",
-        "q":"MOSKVA",
-        "days":"7"
-    ]
     
     // MARK: – Get
-    func getData<T: Decodable>(of type: T.Type, completion: @escaping(Result<T, Error>) ->()) {
+    func getData<T: Decodable>(of type: T.Type, query: String, completion: @escaping(Result<T, Error>) ->()) {
+        let param: Parameters = [
+            "key":"fa8b3df74d4042b9aa7135114252304",
+            "q": query,
+            "days":"7"
+        ]
+        
         AF.request(urlApi, method: .get, parameters: param)
             .validate()
             .responseDecodable(of: T.self, queue: .global()) { response in

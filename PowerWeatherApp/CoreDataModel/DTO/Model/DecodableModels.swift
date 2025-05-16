@@ -174,7 +174,7 @@ struct AstroDto: Decodable {
 }
 
 struct HourDto: Decodable {
-    let timeEpoch: Int
+    let timeEpoch: Int32
     let time: String
     let tempC: Float
     let isDay: Int

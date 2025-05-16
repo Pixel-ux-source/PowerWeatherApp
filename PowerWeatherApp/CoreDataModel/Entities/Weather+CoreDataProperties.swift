@@ -22,6 +22,8 @@ extension Weather {
     @NSManaged public var avgTemp: Float
     @NSManaged public var minTemp: Float
     @NSManaged public var maxWindSpeed: Float
+    @NSManaged public var date: String?
+    @NSManaged public var condition: Condition?
     @NSManaged public var location: Location?
     @NSManaged public var hourWeather: NSSet?
 

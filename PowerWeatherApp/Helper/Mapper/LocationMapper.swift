@@ -21,18 +21,26 @@ struct LocationMapper {
             weather.minTemp = day.day.minTemp
             weather.avgTemp = day.day.avgTemp
             weather.maxWindSpeed = day.day.maxWindSpeed
+            weather.date = day.date
+            
+            let conditionDay = Condition(context: context)
+            conditionDay.icon = day.day.condition.icon
+            conditionDay.text = day.day.condition.text
+            
+            conditionDay.weather = weather
+            weather.condition = conditionDay
             
             day.hour.forEach { element in
                 let hourWeather = HourWeather(context: context)
-                hourWeather.time = element.time
+                hourWeather.timeEpoch = element.timeEpoch
                 hourWeather.temp = element.tempC
 
-                let condition = Condition(context: context)
-                condition.icon = element.condition.icon
-                condition.text = element.condition.text
+                let conditionHour = Condition(context: context)
+                conditionHour.icon = element.condition.icon
+                conditionHour.text = element.condition.text
 
-                condition.hourWeather = hourWeather
-                hourWeather.condition = condition
+                conditionHour.hourWeather = hourWeather
+                hourWeather.condition = conditionHour
 
                 hourWeather.weather = weather
                 weather.addToHourWeather(hourWeather)

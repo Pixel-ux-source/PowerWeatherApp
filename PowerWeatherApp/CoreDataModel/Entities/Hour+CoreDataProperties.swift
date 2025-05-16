@@ -18,7 +18,7 @@ extension HourWeather {
         return NSFetchRequest<HourWeather>(entityName: "HourWeather")
     }
 
-    @NSManaged public var time: String?
+    @NSManaged public var timeEpoch: Int32
     @NSManaged public var temp: Float
     @NSManaged public var condition: Condition?
     @NSManaged public var weather: Weather?

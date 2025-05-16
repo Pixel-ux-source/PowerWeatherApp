@@ -15,7 +15,8 @@ final class MainBuilder: MainBuilderProtocol {
     static func build(dataManager: CoreDataManager, completion: @escaping (MainController) -> ()) {
         let view = MainController()
         let networkService = NetworkService()
-        let presenter = MainPresenter(view: view, dataManager: dataManager, networkService: networkService)
+        let locationService = LocationService()
+        let presenter = MainPresenter(view: view, dataManager: dataManager, networkService: networkService, locationService: locationService)
         view.presenter = presenter
         completion(view)
     }
