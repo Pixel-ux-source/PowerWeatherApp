@@ -1,5 +1,5 @@
 //
-//  TimeLabel.swift
+//  CelsiumLabel.swift
 //  PowerWeatherApp
 //
 //  Created by Алексей on 15.05.2025.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TimeLabel: UILabel {
+final class DayLabel: UILabel {
     // MARK: – Initializate
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -19,10 +19,11 @@ final class TimeLabel: UILabel {
     
     // MARK: – Configure
     private func configure() {
-        textColor = .darkGrayCustom
-        font = .systemFont(ofSize: 12, weight: .medium)
-        textAlignment = .center
+        textColor = .black
+        font = .systemFont(ofSize: 15, weight: .semibold)
+        textAlignment = .left
         numberOfLines = 1
+        setContentHuggingPriority(.required, for: .vertical)
     }
 }
 

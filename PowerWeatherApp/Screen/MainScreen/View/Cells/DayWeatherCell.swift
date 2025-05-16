@@ -15,11 +15,11 @@ final class DayWeatherCell: UICollectionViewCell {
     }
     
     // MARK: – UI Element's
-    private lazy var timeLabel = TimeLabel()
-    private lazy var celsiusLabel = CelsiumLabel()
+    private lazy var timeLabel = SecondLabel()
+    private lazy var celsiusLabel = CelsiusLabel()
     private lazy var weatherImageView = WeatherDayIcon()
-    private lazy var labelStack = VStack(spacing: 20) { [self.timeLabel, self.celsiusLabel] }
-    private lazy var iconStack = VStack(spacing: 20) { [self.labelStack, self.weatherImageView] }
+    private lazy var labelStack = VStack(spacing: 10, distribution: .fillEqually, alignment: .center) { [self.timeLabel, self.celsiusLabel] }
+    private lazy var iconStack = VStack(spacing: 20, distribution: .fillEqually, alignment: .center) { [self.labelStack, self.weatherImageView] }
     
     // MARK: – Inititalizate
     override init(frame: CGRect = .zero) {
@@ -48,13 +48,17 @@ final class DayWeatherCell: UICollectionViewCell {
         iconStack.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        weatherImageView.snp.makeConstraints { make in
+            make.width.equalTo(weatherImageView.snp.height)
+        }
     }
     
     // MARK: – Set UI
     func setUI(time: String, celsius: String) {
         DispatchQueue.main.async {
             self.timeLabel.text = time
-            self.celsiusLabel.text = celsius + "°"
+            self.celsiusLabel.text = celsius
         }
     }
     

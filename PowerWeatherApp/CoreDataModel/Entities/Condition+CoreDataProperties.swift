@@ -21,6 +21,7 @@ extension Condition {
     @NSManaged public var icon: String?
     @NSManaged public var text: String?
     @NSManaged public var hourWeather: HourWeather?
+    @NSManaged public var weather: Weather?
 
 }
 

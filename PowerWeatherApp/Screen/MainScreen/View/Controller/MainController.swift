@@ -41,7 +41,6 @@ class MainController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        navigationItem.title = "Moskva"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let apperance = UINavigationBarAppearance()
@@ -57,12 +56,20 @@ class MainController: UIViewController {
         navigationItem.scrollEdgeAppearance = apperance
         navigationItem.compactAppearance = apperance
     }
-    
 }
 
 extension MainController: MainViewProtocol {
-    func showLocation(_ locations: [Location]) {
-        dataSource.model = locations
+    func showCityName(_ cityName: String) {
+        navigationItem.title = cityName
+    }
+    
+    func showWeekWeather(_ weekWeather: [WeekWeatherModel]) {
+        dataSource.weekWeatherModel = weekWeather
+        collectionView.reloadData()
+    }
+    
+    func showDayWeather(_ dayWeather: [HourWeatherModel]) {
+        dataSource.dayWeatherModel = dayWeather
         collectionView.reloadData()
     }
     

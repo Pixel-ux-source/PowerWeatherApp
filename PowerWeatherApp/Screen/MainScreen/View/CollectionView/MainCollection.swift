@@ -23,7 +23,6 @@ final class MainCollection: UICollectionView {
         register(DayWeatherCell.self, forCellWithReuseIdentifier: DayWeatherCell.id)
         register(WeekWeatherCell.self, forCellWithReuseIdentifier: WeekWeatherCell.id)
     }
-    
 }
 
 enum SectionMainCV: Int, CaseIterable {

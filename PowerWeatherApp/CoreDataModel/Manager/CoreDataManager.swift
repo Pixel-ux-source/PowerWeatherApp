@@ -28,8 +28,12 @@ final class CoreDataManager: ManagerProtocol {
             do {
                 let entity = try dto.map(in: context)
                 try context.save()
+                
+                let objectID = entity.objectID
+                
                 DispatchQueue.main.async {
-                    completion(.success(entity))
+                    let mainContextEntity = self.container.viewContext.object(with: objectID) as! M.Entity
+                    completion(.success(mainContextEntity))
                 }
             } catch let error as NSError {
                 context.rollback()
@@ -50,8 +54,12 @@ final class CoreDataManager: ManagerProtocol {
         container.performBackgroundTask { context in
             do {
                 let objects = try context.fetch(fetchRequest)
+                let objectsID = objects.map { $0.objectID }
                 DispatchQueue.main.async {
-                    completion(objects)
+                    let mainContextObject: [T] = objectsID.compactMap {
+                        self.container.viewContext.object(with: $0) as? T
+                    }
+                    completion(mainContextObject)
                 }
             } catch let error as NSError {
                 DispatchQueue.main.async {

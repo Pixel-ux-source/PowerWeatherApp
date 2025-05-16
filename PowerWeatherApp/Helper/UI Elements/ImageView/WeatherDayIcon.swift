@@ -15,12 +15,14 @@ final class WeatherDayIcon: UIImageView {
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        
     }
     
     // MARK: – Configure
     private func configure() {
         contentMode = .scaleAspectFit
         clipsToBounds = true
+        setContentHuggingPriority(.defaultLow, for: .vertical)
+        setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        tintColor = .second
     }
 }
